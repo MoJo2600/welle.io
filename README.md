@@ -21,6 +21,7 @@ Table of contents
     * [macOS](#macos)
     * [CMake instead of Qt Creator (Windows, Linux, macOS)](#cmake-instead-of-qt-creator-windows-linux-macos)
     * [Android](#android)
+    * [Raspberry Pi](#raspberry-pi)
   * [welle-cli](#welle-cli)
     * [Usage](#usage-of-welle-cli)
     * [Backend options](#backend-options)
@@ -314,6 +315,16 @@ git clone https://github.com/AlbrechtL/welle.io.git
 4. Start Qt Creator and open the project file `welle.io.pro` inside the folder "welle.io".
 5. Build welle.io
 6. Run welle.io and enjoy it
+
+Raspberry Pi
+---
+You can cross compile welle.io for Raspberry Pi with the supplied Dockerfile `Dockerfile.raspberrypi`. 
+
+The following command will start a buildx build and put the cross compiled binaries in the folder `./build`
+
+```
+docker build -f Dockerfile.raspberrypi --platform linux/arm/v6 --target export -t build --output . .
+```
 
 welle-cli
 ==

@@ -38,7 +38,7 @@ jobs:
         run: |
           mkdir build/
           docker build -f Dockerfile.raspberrypi --platform linux/arm/v6 --target export -t build --output . .
-          ls -lah
+          ls -lah build/
 
       - name: Archive artifacts (welle.io build dir)
         if: always() && steps.build.outcome == 'failure'
